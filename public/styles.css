@@ -1,0 +1,258 @@
+body {
+    background: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;   
+}
+
+.headings {
+    background: -webkit-linear-gradient(#160163, #475bee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+#teams-heading {
+    margin-bottom: 0;
+    text-align: center;
+ }
+ #add-teams-heading {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 25px;
+ }
+
+#navbar {
+    background-color: #275673;
+    top: 0;
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    list-style-type: none;
+
+}
+#navbar ul{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+/*navbar links*/
+#navbar a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    margin-left: 0px;
+    text-align: center;
+}
+/*mouse hover animation on navbar*/
+#navbar a:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+    border-radius: 9px;
+}
+
+
+
+
+/* Structure */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
+}
+
+.team {
+    padding: 30px;
+    margin: 10px;
+    background: #a8d0e9;
+    border-radius: 5px;
+    border: 3px solid #275673;
+    text-align: center;
+}
+
+.team img {
+    max-width: 90%;
+    display: block;
+    margin: auto;
+}
+
+#team-information-column {
+    padding: 10px;
+    margin: 10px;
+    background: #a8d0e9;
+    border-radius: 5px;
+    border: 3px solid #275673;
+    text-align: center;
+}
+
+#add-link {
+    font-size: 3em;
+    border: 3px solid #275673;
+    color: #275673;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#add-team-container {
+    padding: 10px;
+    margin: 10px;
+    background: #a8d0e9;
+    border-radius: 5px;
+    border: 3px solid #275673;
+    text-align: center;
+}
+
+.logo-small{
+    height: 150px;
+    width: auto;
+}
+
+/* Form */
+
+label {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+#players-p input {
+    margin-top: 5px;
+}
+
+#add-player {
+    color: darkblue;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+
+/* Modal Dialog */
+
+#modal-background {
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: scroll;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+button {
+    background-color: #18384b;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: white;
+    /* Green */
+    color: #18384b;
+    border: 2px solid #18384b;
+}
+
+
+/* Modal Content */
+
+.dialog {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+}
+
+.dialog img {
+    max-width: fit-content;
+    display: block;
+    padding: 30px 5px 30px 30px;
+    margin: auto;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Typography */
+
+#main-nav-items {
+    font-size: 1.2em;
+}
+
+a {
+    text-decoration: none;
+    color:#18384b;
+}
+
+.hidden {
+    display: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+
+/* Larger Resolutions */
+
+@media (min-width: 600px) {
+
+    #navbar li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .columns {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col1of2 div {
+        flex: 1;
+    }
+    .team {
+        width: 25%;
+    }
+    #add-team-container {
+        max-width: 30%;
+        margin: auto;
+    }
+}

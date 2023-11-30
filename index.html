@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+</head>
+
+
+<header>
+    <div id="navbar">
+        <ul>
+            <li> <a class="this-page" href="#"><b>Home</b></a></li>
+            <li><a href="classes.html"><b>Classes</b></a></li>
+            <li><a href="assignments.html"><b>Assignments</b></a></li>
+            <li> <a href="about.html"><b>About</b></a></li>
+        </ul>
+    </div>
+</header>
+
+
+<body>
+
+    <div class="headings">
+        <h1 id="teams-heading">Football Teams</h1>
+    </div>
+
+    <a href="#" id="add-link">+</a>
+    <div class="columns col1of2">
+        <div id="team-list" class="columns">
+        </div>
+        <div id="team-information-column">
+            <h2>Team Information</h2>
+            <div id="team-information">
+            </div>
+        </div>
+    </div>
+    <div id="add-team-container" class="dialog transparent">
+        <span class="close">&times;</span>
+        <div class="headings">
+            <h1 id="add-teams-heading">Football Teams</h1>
+        </div>
+        <form id="add-team-form" method="post">
+            <input type="hidden" name="_id" value="-1" />
+            <p>
+                <label for="name ">Team Name:</label>
+                <input type="text" id="name" name="name" required />
+            </p>
+            <p>
+                <label for="img">Upload Logo:</label>
+                <input type="file" id="img" name="img" />
+            </p>
+            <p>
+                <label for="position ">Last seasons position:</label>
+                <input type="text" id="position" name="position" required />
+            </p>
+
+            <p>
+                <label for="country ">Plays in:</label>
+                <input type="text" id="country" name="country" required />
+            </p>
+
+            <p>
+                <label for="nickname ">nickname:</label>
+                <input type="text" id="nickname" name="nickname" required />
+            </p>
+
+            <p>
+                <label for="kitcolour">Kit Colour:</label>
+                <input type="text" id="kitcolour" name="kitcolour" required />
+            </p>
+
+
+            <p id="players-p ">
+                <label class="inline">Players:</label>
+                <a href="#" id="add-player">Add Player</a>
+                <section id="player-boxes"></section>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
