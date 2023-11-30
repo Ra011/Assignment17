@@ -6,102 +6,44 @@ app.use(express.static("public"));
 app.use(express.json());
 const cors = require("cors");
 app.use(cors());
+const mongoose = require("mongoose");
 
 const upload = multer({ dest: __dirname + "/public/images" });
+
+
+mongoose
+  .connect(
+    "mongodb+srv://raphaelattfield:U4ZivtKn7i6x-iY@cluster0.3umc0ij.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("Connected to mongodb..."))
+  .catch((err) => console.error("could not connect ot mongodb...", err));
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-let teams = [{
-    _id: 1,
-    name: "Arsenal",
-    img: "images/arsenal.png",
-    position: "2nd",
-    country: "England",
-    nickname: "The Gunners",
-    kitcolour: "Red",
-    players: [
-        "Sake",
-        "Odegaard",
-        "Saliba",
-    ],
-},
-{
-    _id: 2,
-    name: "Juventus",
-    img: "images/juventus.png",
-    position: "7th",
-    country: "Italy",
-    nickname: "The Old Lady",
-    kitcolour: "Black and White",
-    players: [
-        "Vlahovic",
-        "Chiesa",
-        "Locatelli",
-    ],
-},
-{
-    _id: 3,
-    name: "Barcelona",
-    img: "images/barcelona.png",
-    position: "2nd",
-    country: "Spain",
-    nickname: "Barca",
-    kitcolour: "Red and Blue",
-    players: [
-        "Lewandowski",
-        "De jong",
-        "Pedri",
-    ],
-},
-{
-    _id: 4,
-    name: "Real Madrid",
-    img: "images/madrid.png",
-    position: "1st",
-    country: "Spain",
-    nickname: "	Los Blancos",
-    kitcolour: "White",
-    players: [
-        "Vinicious Jr",
-        "Modric",
-        "Kroos",
-    ],
-},
-{
-    _id: 5,
-    name: "PSG",
-    img: "images/psg.png",
-    position: "1st",
-    country: "France",
-    nickname: "Les Parisiens",
-    kitcolour: "Red, Blue and White",
-    players: [
-        "Mbappe",
-        "Dembele",
-        "Hakimi",
-    ],
-},
-{
-    _id: 6,
-    name: "Bayern Munich",
-    img: "images/bayern.png",
-    position: "1st",
-    country: "Germany",
-    nickname: "	Die Bayern (The Bavarians)",
-    kitcolour: "Red",
-    players: [
-        "Kane",
-        "Kimmich",
-        "Muller",
-    ],
-},
-];
 
-app.get("/api/teams", (req, res) => {
+const teamSchema = new mongoose.Schema({
+    name: String,
+    img: String,
+    position: String,
+    country: String,
+    nickname: String,
+    kitcolour: String,
+    players: [String],
+  });
+
+  const Team = mongoose.model("Team", teamSchema);
+
+  app.get("/api/recipes", (req, res) => {
+    getTeams(res);
+  });
+
+  const getTeams = async (res) => {
+    const teams = await Team.find();
     res.send(teams);
-});
+  };
+
 
 
 
