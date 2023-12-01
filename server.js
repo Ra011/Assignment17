@@ -54,7 +54,7 @@ app.post("/api/teams", upload.single("img"), (req, res) => {
   const team = new Team({
         name: req.body.name,
         position: req.body.position,
-        country: req.body.county,
+        country: req.body.country,
         nickname: req.body.nickname,
         kitcolour: req.body.kitcolour,
         players: req.body.players.split(","),
@@ -87,7 +87,7 @@ const updateTeam = async (req, res) => {
   let fieldsToUpdate = {
     name: req.body.name,
     position: req.body.position,
-    country: req.body.county,
+    country: req.body.country,
     nickname: req.body.nickname,
     kitcolour: req.body.kitcolour,
     players: req.body.players.split(","),
